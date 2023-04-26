@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.luizdev.mypost.domain.DTO.UserDTO;
+import com.luizdev.mypost.domain.entities.Seller;
 import com.luizdev.mypost.domain.entities.User;
 import com.luizdev.mypost.exceptions.UserNotFoundException;
+import com.luizdev.mypost.repositories.SellerRepository;
 import com.luizdev.mypost.repositories.UserRepository;
 
 @Service
@@ -17,6 +19,9 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
+    @Autowired
+    private SellerRepository sellerRepository;
+
     public List<User> allUsers(){
         return repository.findAll();
     }
@@ -24,6 +29,12 @@ public class UserService {
     public User findUserById(String id) {
         Optional<User> user = repository.findById(id);
         return user.orElseThrow(() -> 
+        new UserNotFoundException("ERRO: Usuário não encontrado ou não existe"));
+    }
+
+    public Seller findSellerById(String id) {
+        Optional<Seller> seller = sellerRepository.findById(id);
+        return seller.orElseThrow(() -> 
         new UserNotFoundException("ERRO: Usuário não encontrado ou não existe"));
     }
 

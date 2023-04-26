@@ -5,6 +5,8 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.luizdev.mypost.domain.DTO.SellerDTO;
+
 @Document(collection = "products")
 public class Product implements Serializable{
     private static final long serialVersionUID = 1L;
@@ -14,25 +16,18 @@ public class Product implements Serializable{
     private String name;
     private Double price;
     private String description;
-    private Seller seller;
+    private SellerDTO seller;
 
     public Product() {
 
     }
 
-    public Product(String id, String name, Double price, String description, Seller seller) {
+    public Product(String id, String name, Double price, String description, SellerDTO SellerDTODTO) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
-        this.seller = seller;
-    }
-
-    public Product(String id, String name, Double price, String description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
+        this.seller = SellerDTODTO;
     }
 
     public String getId() {
@@ -67,12 +62,12 @@ public class Product implements Serializable{
         this.description = description;
     }
 
-    public Seller getSeller() {
+    public SellerDTO getSeller() {
         return seller;
     }
 
-    public void setSeller(Seller seller) {
-        this.seller = seller;
+    public void setSellerDTODTO(SellerDTO s) {
+        this.seller = s;
     }
 
     @Override
