@@ -15,6 +15,7 @@ public class Product implements Serializable{
     private String id;
     private String name;
     private Double price;
+    private String imagePath;
     private String description;
     private SellerDTO seller;
 
@@ -22,10 +23,11 @@ public class Product implements Serializable{
 
     }
 
-    public Product(String id, String name, Double price, String description, SellerDTO SellerDTODTO) {
+    public Product(String id, String name, Double price, String path, String description, SellerDTO SellerDTODTO) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.imagePath = path;
         this.description = description;
         this.seller = SellerDTODTO;
     }
@@ -52,6 +54,15 @@ public class Product implements Serializable{
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public String getDescription() {

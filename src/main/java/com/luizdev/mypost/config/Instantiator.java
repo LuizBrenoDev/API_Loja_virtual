@@ -40,8 +40,8 @@ public class Instantiator implements CommandLineRunner{
 
         repository.saveAll(Arrays.asList(ex1,ex2,ex3));
 
-       Product p1 = new Product(null, "TV", 2800.0, "A good TV",new SellerDTO(seller));
-       Product p2 = new Product(null, "Videogame", 1100.0, "A funny Game",new SellerDTO(seller));
+       Product p1 = new Product(null, "TV", 2800.0, "product_images/p1", "A good TV",new SellerDTO(seller));
+       Product p2 = new Product(null, "Videogame", 1100.0, "product_images/p2", "A funny Game",new SellerDTO(seller));
 
        productRepository.saveAll(Arrays.asList(p1,p2));
 

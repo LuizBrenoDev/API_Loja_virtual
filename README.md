@@ -11,8 +11,9 @@
 
 ## Tecnologias utilizadas:
 * Java
-* Spring 
+* Spring Boot
 * MongoDB
+* SwaggerUI
 
 ## Autor:
 Luiz Breno Santos Costa
